@@ -11,9 +11,11 @@ for line in sys.stdin:
 valid=0
 for l in lines:
     (i,s,c,pwd) = split("[ :-]+", l)
+    # Part 1
     # count = Counter(pwd)
     # if int(i) <= count[c] <= int(s):
     #     valid += 1
+    # Part 2
     if (pwd[int(i)-1] == c and pwd[int(s)-1] != c) or (pwd[int(i)-1] != c and pwd[int(s)-1] == c):
         valid +=1
 
