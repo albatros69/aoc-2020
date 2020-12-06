@@ -9,7 +9,7 @@ for line in sys.stdin:
 # Part 1
 # answers = set()
 # Part 2
-answers = set('abcdefghijklmnopqrstuvwxyz')
+answers = set('abcdefghijklmnopqrstuvwxyz') # set([ chr(c) for c in range(ord('a'), ord('z')+1) ])
 yes_count = []
 for l in lines:
     if l:
