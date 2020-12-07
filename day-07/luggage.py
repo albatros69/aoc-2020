@@ -33,7 +33,7 @@ for l in lines:
             rules[color][m.group('color')] = int(m.group('nb'))
 
 # Part 1
-# print(len(find_parent_bags('shiny gold')))
+print(len(find_parent_bags('shiny gold', rules)))
 
 # Part 2
 print(count_child_bags('shiny gold', rules) -1)
