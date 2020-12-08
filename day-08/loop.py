@@ -13,9 +13,9 @@ for l in lines:
     instructions_orig.append({ 'op': op, 'val': int(val), 'count': 0})
 
 # Part 1
-instructions=deepcopy(instructions_orig) # to preserve the counts for Part 2
-accumulator=0
-cursor=0
+instructions = deepcopy(instructions_orig) # to preserve the counts for Part 2
+accumulator = 0
+cursor = 0
 instr = instructions[cursor]
 while instr['count'] == 0:
     instr['count'] += 1
@@ -38,7 +38,7 @@ def mod_instructions(instructions, last_change):
     # Change one instruction after last_change
     tmp = deepcopy(instructions)
     for i in range(last_change+1, len(instructions)):
-        if tmp[i]['op'] == 'nop' and tmp[i]['val']:
+        if tmp[i]['op'] == 'nop' and tmp[i]['val']: # Avoid creating jmp +0
             tmp[i]['op'] = 'jmp'
             return tmp, i
         elif tmp[i]['op'] == 'jmp':
@@ -47,13 +47,12 @@ def mod_instructions(instructions, last_change):
 
 last_change = -1
 cursor = 0
-accumulator=0
 
 while cursor < len(instructions) and last_change < len(instructions):
     tmp_instructions, last_change = mod_instructions(instructions_orig, last_change)
 
-    accumulator=0
-    cursor=0
+    accumulator = 0
+    cursor = 0
     instr = tmp_instructions[cursor]
     while instr['count'] == 0:
         instr['count'] += 1
