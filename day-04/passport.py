@@ -7,7 +7,7 @@ for line in sys.stdin:
 	lines.append(line.rstrip('\n'))
 
 
-mandatory_keys = [ 'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid', ] # 'cid',
+mandatory_keys = ( 'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid', ) # 'cid',
 def passport_is_valid(p):
     # Part 1:
     # return all([ k in p.keys() for k in mandatory_keys ])
@@ -50,9 +50,7 @@ passports = []
 passport = {}
 for l in lines:
     if l:
-        for field in l.split():
-            k,v = field.split(':')
-            passport[k] = v
+        passport.update({ k: v for field in l.split() for (k,v) in field.split(':') })
     else:
         passports.append(passport)
         passport = {}
