@@ -21,6 +21,7 @@ class Decipher():
 			self.data.append(value)
 			return True
 		else:
+			assert(self.cursor + self.preamble_length == len(self.data)) 
 			if self.is_valid(value):
 				self.cursor += 1 # We move the head of the sliding window
 				self.data.append(value) # and add the new valid value at the end
@@ -29,7 +30,7 @@ class Decipher():
 				return False
 	
 	def is_valid(self, value):
-		for (a,b) in combinations(self.data[self.cursor:self.cursor+self.preamble_length], 2):
+		for (a,b) in combinations(self.data[self.cursor:], 2):
 			if a+b == value:
 				return True
 
