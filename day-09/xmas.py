@@ -45,6 +45,7 @@ class Decipher():
 
 # Part 1
 input = Decipher(25)
+error = None
 for l in lines:
 	if not input.read_next(l):
 		error = l
