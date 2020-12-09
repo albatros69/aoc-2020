@@ -8,6 +8,7 @@ lines = []
 for line in sys.stdin:
 	lines.append(line.rstrip('\n'))
 
+
 # Part 1
 def find_parent_bags(color, rules):
     result = set()
@@ -20,6 +21,7 @@ def find_parent_bags(color, rules):
 # Part 2
 def count_child_bags(color, rules):
     return 1 + sum(v*count_child_bags(c, rules) for (c, v) in rules[color].items())
+
 
 rules = defaultdict(dict)
 content_re = re.compile("^(?P<nb>[0-9]+) (?P<color>[a-z ]+) bag.*$")

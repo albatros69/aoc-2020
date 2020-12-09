@@ -53,7 +53,7 @@ for l in lines:
 		break
 
 # Part 2
-# Looking for a subset of contiguous values which sum is egal to the invalid value
+# Looking for a subset of contiguous values whose sum is egal to the invalid value
 for start in range(0, input.cursor):
 	for end in range(1, input.cursor+1):
 		if sum(input.data[start:end]) == error:

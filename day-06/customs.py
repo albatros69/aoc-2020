@@ -13,11 +13,15 @@ answers = set('abcdefghijklmnopqrstuvwxyz') # set([ chr(c) for c in range(ord('a
 yes_count = []
 for l in lines:
     if l:
+        # Part 1
         # answers = answers.union(set(l))
+        # Part 2
         answers = answers.intersection(set(l))
     else:
         yes_count.append(len(answers))
+        # Part 1
         # answers = set()
+        # Part 2
         answers = set('abcdefghijklmnopqrstuvwxyz')
 
 if len(answers) > 0:

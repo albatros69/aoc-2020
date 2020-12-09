@@ -25,6 +25,7 @@ for l in lines:
 
 # print(result)
 
+# Part 2
 for s in seat_ids:
     if s+1 not in seat_ids and s+2 in seat_ids:
         print(s+1)
