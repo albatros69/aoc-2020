@@ -4,7 +4,7 @@ import sys
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 # Part 1
 # answers = set()

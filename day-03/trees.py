@@ -5,7 +5,7 @@ from functools import reduce
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 # Right 1, down 1.
 # Right 3, down 1. (This is the slope you already checked.)

@@ -5,7 +5,7 @@ from itertools import combinations
 
 lines = []
 for line in sys.stdin:
-	lines.append(int(line.rstrip('\n')))
+    lines.append(int(line.rstrip('\n')))
 
 # Part 1
 for (a,b) in combinations(lines, 2):

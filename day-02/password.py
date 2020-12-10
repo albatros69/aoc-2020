@@ -6,7 +6,7 @@ from collections import Counter
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 valid=0
 for l in lines:

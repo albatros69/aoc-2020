@@ -4,7 +4,7 @@ import sys
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 
 mandatory_keys = ( 'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid', ) # 'cid',

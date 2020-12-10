@@ -10,7 +10,7 @@ def convert_to_decimal(val, conv):
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 # result=0
 seat_ids = []

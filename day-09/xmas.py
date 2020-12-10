@@ -40,9 +40,9 @@ class Decipher():
 # Test
 # test = Decipher(5)
 # for l in lines:
-# 	if not test.read_next(int(l)):
-# 		print(l)
-# 		break
+#     if not test.read_next(int(l)):
+#         print(l)
+#         break
 
 # Part 1
 input = Decipher(25)

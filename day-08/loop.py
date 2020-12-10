@@ -5,7 +5,7 @@ from copy import deepcopy
 
 lines = []
 for line in sys.stdin:
-	lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n'))
 
 instructions_orig=[]
 for l in lines:
