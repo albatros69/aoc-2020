@@ -88,11 +88,11 @@ class Room():
 room = Room(lines)
 
 # room.print(); print('-'*8)
-# room.change_room('part2')
+# room.change_room('part1')
 # room.print(); print('-'*8)
-# room.change_room('part2')
+# room.change_room('part1')
 # room.print(); print('-'*8)
-# room.change_room('part2')
+# room.change_room('part1')
 # room.print(); print('-'*8)
 
 while True:
