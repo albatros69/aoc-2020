@@ -11,7 +11,7 @@ Position=namedtuple('Position', ('x', 'y'))
 
 class ShipPart1():
     position = Position(0, 0)
-    directions = { 'E': Position(1,0), 'N': Position(0,1), 'W': Position(-1,0), 'S': Position(0,-1)}
+    directions = { 'E': Position(1,0), 'N': Position(0,1), 'W': Position(-1,0), 'S': Position(0,-1) }
     direction = Position(1,0)
 
     def move(self, direction, val):
@@ -19,17 +19,20 @@ class ShipPart1():
             self.position.x + val*direction.x, self.position.y + val*direction.y
         )
 
-    def rotate(self, direction, angle):
-        quarter = angle//90
-        rotation = list(self.directions.values()) #[ 'E', 'N', 'W', 'S' ]
-        dir = -1 if direction=='R' else 1
+    def rotate_90(self, direction):
+        if direction == 'L':
+            self.direction = Position(-self.direction.y, self.direction.x)
+        else:
+            self.direction = Position(self.direction.y, -self.direction.x)
 
-        self.direction = rotation[(rotation.index(self.direction)+quarter*dir)%4]
+    def rotate(self, direction, angle):
+        for _ in range(angle//90):
+            self.rotate_90(direction)
 
     def apply_instruction(self, cmd, val):
         if cmd=='F':
             self.move(self.direction, val)
-        elif cmd in ('E', 'W', 'N', 'S'):
+        elif cmd in self.directions.keys():
             self.move(self.directions[cmd], val)
         elif cmd in ('R', 'L'):
             self.rotate(cmd, val)
@@ -61,23 +64,13 @@ class ShipPart2(ShipPart1):
             self.direction.x + val*direction.x, self.direction.y + val*direction.y
         )
 
-    def rotate_90(self, direction):
-        if direction == 'L':
-            self.direction = Position(-self.direction.y, self.direction.x)
-        else:
-            self.direction = Position(self.direction.y, -self.direction.x)
-
-    def rotate_waypoint(self, direction, angle):
-        for _ in range(angle//90):
-            self.rotate_90(direction)
-
     def apply_instruction(self, cmd, val):
         if cmd=='F':
             self.move(self.direction, val)
-        elif cmd in ('E', 'W', 'N', 'S'):
+        elif cmd in self.directions.keys():
             self.move_waypoint(self.directions[cmd], val)
         elif cmd in ('R', 'L'):
-            self.rotate_waypoint(cmd, val)
+            self.rotate(cmd, val)
 
 
 # Part 2
