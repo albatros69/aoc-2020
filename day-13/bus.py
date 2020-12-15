@@ -26,7 +26,7 @@ buses = [ (int(b), offset) for offset,b in enumerate(lines[1].split(',')) if b!=
 def is_valid(tstamp):
     return all(( (tstamp+offset)%bus == 0 for bus,offset in buses))
 
-# Naïve brute-froce approach that works for all the test cases
+# Naive brute-force approach that works for all the test cases but not the input
 # tstamp=0
 # bus, offset = max(buses) # to speed up the search
 # while not is_valid(tstamp-offset):
