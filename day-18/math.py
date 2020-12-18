@@ -92,8 +92,7 @@ result = 0
 for l in lines:
     # We need to read the expression from the right in order to get the evaluation order right
     expr = read(l.replace(' ', '')[::-1])
-    # print(repr(expr))
-    # print(f"{l} = {expr.eval()}")
+    # print(f"{l} = {expr} = {expr.eval()}")
     result += expr.eval()
 
 print(result)
@@ -150,8 +149,7 @@ def read_term(text):
 result = 0
 for l in lines:
     expr, _ = read_expr(l.replace(' ', ''))
-    # print(repr(expr))
-    # print(f"{l} = {expr.eval()}")
+    # print(f"{l} = {expr} = {expr.eval()}")
     result += expr.eval()
 
 print(result)
