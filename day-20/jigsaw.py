@@ -2,7 +2,6 @@
 
 import sys
 from collections import defaultdict
-from copy import deepcopy
 
 lines = []
 for line in sys.stdin:
@@ -133,7 +132,7 @@ class Image(Tile): # to inherit all the transformations
         if tile.left is None and tile.top is not None:# and y+tile.dim-2<self.dim:
             self.add_tile(x,y+tile.dim-2, tile.top)
 
-    # To test with the borders and especially with test2
+    # To test with the borders and especially with test2 for a visual check
     # def add_tile(self, x, y, tile: Tile):
     #     for i in range(0, tile.dim):
     #         for j in range(0, tile.dim):
