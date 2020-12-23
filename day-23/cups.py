@@ -68,6 +68,13 @@ print("-- final --"); print(game)
 print(game.result())
 
 # Part 2
+
+# # Takes too much time!
+# game=Cups(list(map(int, lines[0])), limit=limit)
+# for i in range(1,100000000):
+#     print(f"-- move {i} --", end='\r')
+#     game.move()
+
 class Cup():
     label=None
     next=None
@@ -81,12 +88,6 @@ class Cup():
 
 limit = 1000000
 # limit = 9 # to test this solution for part 1
-
-# # Takes too much time!
-# game=Cups(list(map(int, lines[0])), limit=limit)
-# for i in range(1,100000000):
-#     print(f"-- move {i} --", end='\r')
-#     game.move()
 
 cups = { i: Cup(i) for i in range(1, limit+1) }
 for i in range(1, limit):
