@@ -94,8 +94,8 @@ def step(floor):
             if n in floor:
                 nb_b+= int(floor[n].color=='b')
             else:
-                if n not in new_floor:
-                    new_floor[n]=Tile(*n)
+                # to check them the day after
+                new_floor[n]=Tile(*n)
 
         if floor[tile].color=='b' and (nb_b==0 or nb_b>2):
             new_floor[tile].flip()
