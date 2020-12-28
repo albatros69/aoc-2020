@@ -12,7 +12,7 @@ lines = []
 for line in sys.stdin:
     lines.append(line.rstrip('\n'))
 
-# result=0
+result=0
 seat_ids = []
 
 for l in lines:
@@ -20,10 +20,10 @@ for l in lines:
     col = convert_to_decimal(l[7:10], { 'L': 0, 'R': 1})
     seat_id = 8*row+col
     # Part 1
-    # result = max(result, seat_id)
+    result = max(result, seat_id)
     seat_ids.append(seat_id)
 
-# print(result)
+print(result)
 
 # Part 2
 for s in seat_ids:
