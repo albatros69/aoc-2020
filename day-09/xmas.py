@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 
-import collections
 import sys
 from itertools import combinations
 
@@ -10,32 +9,32 @@ for line in sys.stdin:
 
 
 class Decipher():
-    
+
     def __init__(self, preamble_length):
         self.preamble_length = preamble_length
         self.cursor = 0
         self.data = []
-    
+
     def read_next(self, value):
         if len(self.data) < self.preamble_length: # Still reading the preamble
             self.data.append(value)
             return True
         else:
-            assert(self.cursor + self.preamble_length == len(self.data)) 
+            assert(self.cursor + self.preamble_length == len(self.data))
             if self.is_valid(value):
                 self.cursor += 1 # We move the head of the sliding window
                 self.data.append(value) # and add the new valid value at the end
                 return True
             else:
                 return False
-    
+
     def is_valid(self, value):
         for (a,b) in combinations(self.data[self.cursor:], 2):
             if a+b == value:
                 return True
 
         return False
-    
+
 
 # Test
 # test = Decipher(5)
