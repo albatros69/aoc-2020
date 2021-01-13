@@ -88,7 +88,7 @@ if tmp:
     tiles.append(Tile(id, tmp))
 
 neighbours = defaultdict(set)
-transformations = ('flip_h', 'flip_v', 'flip_h', 'flip_v', 'rotate', ) * 4
+transformations = ('rotate', 'rotate', 'rotate', 'flip_v', 'rotate', 'rotate', 'rotate', 'flip_v' )
 tmp = tiles.copy()
 grid = [ tmp.pop(0) ]
 while tmp:
