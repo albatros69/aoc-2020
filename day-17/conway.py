@@ -43,7 +43,7 @@ class Grid3():
             self.tmp_grid[x,y,z] = self.grid[x,y,z]
 
         return new_cells
-        
+
     def cycle(self):
         new_cells = []
         self.tmp_grid.clear()
@@ -55,7 +55,7 @@ class Grid3():
     @property
     def active_cells(self):
         return sum(self.grid[cell]=='#' for cell in self.grid)
-    
+
 
 # Part 1
 grid = Grid3(lines)
@@ -97,7 +97,7 @@ class Grid4():
             self.tmp_grid[x,y,z,w] = self.grid[x,y,z,w]
 
         return new_cells
-        
+
     def cycle(self):
         new_cells = []
         self.tmp_grid.clear()
@@ -109,7 +109,7 @@ class Grid4():
     @property
     def active_cells(self):
         return sum(self.grid[cell]=='#' for cell in self.grid)
-    
+
 grid = Grid4(lines)
 for _ in range(6):
     grid.cycle()
